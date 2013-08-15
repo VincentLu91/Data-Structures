@@ -7,11 +7,10 @@ Node Declaration:
 end declaration;
 
 Add_node (int v):
-  // assume that there is enough memory 
   if (List == NULL) // empty
     allocate memory for this new node
     insert new node with value v
-    v.link = NULL
+    new node.link = NULL
   else
     create node *temp
     for(temp = head; temp != NULL; temp = temp->link) // traverse list from start to end
