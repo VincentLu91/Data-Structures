@@ -7,18 +7,20 @@ Node Declaration:
 end declaration;
 
 Add_node (int v):
-  // assume that there is enough memory 
   if (List == NULL) // empty
     allocate memory for this new node
     insert new node with value v
-    v.link = NULL
+    new node.link = NULL
   else
+    create node* temp
     for(temp = head; temp != NULL; temp = temp->link) // traverse list from start to end
       if (v > temp.value)
+        allocate memory for new node
         make temp point to new node
         make new node point to the node (originally) after temp
       else
         assign original head node to temporary node
+        allocate memory for new node
         assign new node to head
         make new node point to temporary node (which was the original head)
   
@@ -30,4 +32,3 @@ Delete_node (int v):
       if (temp.value == v)
         previous node points to the node after temp
         de-allocate temp
-        exit loop
