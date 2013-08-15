@@ -1,0 +1,31 @@
+-----------------------------------Unsorted Linked Lists-------------------------------------------------------
+
+
+Node Declaration:
+  int value // value of integer type
+  node *link // pointer to next node
+end declaration;
+
+Add_node (int v):
+  // assume that there is enough memory 
+  if (List == NULL) // empty
+    allocate memory for this new node
+    insert new node with value v
+    v.link = NULL
+  else
+    create node *temp
+    for(temp = head; temp != NULL; temp = temp->link) // traverse list from start to end
+      // our goal is to get to the last node, that is temp becomes the node that points to NULL
+    allocate memory for new node
+    make temp point to new node
+    make new node point to NULL
+ 
+  
+Delete_node (int v):
+  if (List == NULL) // empty
+    do nothing
+  else
+    for (temp = head; temp != NULL; temp = temp->ptr) // traverse list from start to end
+      if (temp.value == v)
+        previous node points to the node after temp
+        de-allocate temp
